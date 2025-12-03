@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 
 export default function PaginaMestra() {
   const router = useRouter();
+  const estiloDoBotao = "w-full py-3 my-3 rounded-lg text-white bg-blue-700";
 
   const handleNavigate = () => {
     const dado = {
@@ -21,9 +22,9 @@ export default function PaginaMestra() {
   };
 
   return (
-    <div>
+    <div className='p-4'>
       <h1>Página Mestra</h1>
-      <button onClick={handleNavigate}>
+      <button className={estiloDoBotao} onClick={handleNavigate}>
         Ir para a página de Detalhes do Produto
       </button>
     </div>

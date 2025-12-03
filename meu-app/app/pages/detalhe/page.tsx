@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 
 export default function PaginaDeDetalhe() {
   const searchParams = useSearchParams();
+  const estiloDoDetalhe = "w-full p-3 my-3 rounded-lg text-white bg-red-500";
 
   // Acessando os parâmetros recebidos:
   const id = searchParams.get('id');
@@ -18,12 +19,12 @@ export default function PaginaDeDetalhe() {
   }, [id, nome, preco]);
 
   return (
-    <div>
+    <div className='p-4'>
       <h1>Página de Detalhes</h1>
       {id && nome && preco ? (
-        <p>Exibindo detalhes para: ID {id}, Nome: {nome}, Preço: {preco}</p>
+        <p className={estiloDoDetalhe}>Exibindo detalhes para: ID {id}, Nome: {nome}, Preço: {preco}</p>
       ) : (
-        <p>Nenhum dado de produto encontrado.</p>
+        <p className={estiloDoDetalhe}>Nenhum dado de produto encontrado.</p>
       )}
     </div>
   );
