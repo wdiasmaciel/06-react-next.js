@@ -1,11 +1,15 @@
 'use client'; // Necessário para usar hooks do React/Next.js.
 
 import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 export default function PaginaDeDetalhe() {
   const searchParams = useSearchParams();
+  const router = useRouter();
+
   const estiloDoDetalhe = "w-full p-3 my-3 rounded-lg text-white bg-red-500";
+  const estiloDoBotao = "w-full py-3 my-3 rounded-lg text-white bg-blue-700";
 
   // Acessando os parâmetros recebidos:
   const id = searchParams.get('id');
@@ -26,6 +30,9 @@ export default function PaginaDeDetalhe() {
       ) : (
         <p className={estiloDoDetalhe}>Nenhum dado de produto encontrado.</p>
       )}
+      <button className={estiloDoBotao} onClick={() => router.push('/pages/mestre')}>
+        Voltar para a Página Mestra
+      </button>
     </div>
   );
 }
