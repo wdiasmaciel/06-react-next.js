@@ -16,8 +16,7 @@ export default function PaginaMestra() {
     // Serializa o objeto para uma string JSON e codifica para URL, se necessário,
     // ou passa campos simples diretamente como no exemplo abaixo.
     // Observação: as rotas estão em `app/pages/...`, então o caminho real é
-    // `/pages/detalhe`. Também usamos o parâmetro `nome` (não `name`) pois
-    // `detalhe/page.tsx` lê `nome` via `searchParams.get('nome')`.
+    // `/pages/detalhe`. 
     router.push(`/pages/detalhe?id=${dado.id}&nome=${encodeURIComponent(dado.nome)}&preco=${dado.preco}`);
   };
 
