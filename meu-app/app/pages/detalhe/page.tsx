@@ -2,7 +2,6 @@
 
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 
 export default function PaginaDeDetalhe() {
   const searchParams = useSearchParams();
@@ -15,12 +14,6 @@ export default function PaginaDeDetalhe() {
   const id = searchParams.get('id');
   const nome = searchParams.get('nome');
   const preco = searchParams.get('preco');
-
-  useEffect(() => {
-    if (id && nome && preco) {
-      console.log(`Dados recebidos: ID ${id}, Nome: ${nome}, Preço: ${preco}`);
-    }
-  }, [id, nome, preco]);
 
   return (
     <div className='p-4'>
